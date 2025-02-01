@@ -1,50 +1,106 @@
 import 'package:ecom/constants.dart';
-import 'package:ecom/features/checkout/widgets/cart_card.dart';
-import 'package:ecom/route/screen_export.dart';
+import 'package:ecom/features/checkout/widgets/checkout_product_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+class CheckoutScreen extends StatelessWidget {
+  const CheckoutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cart"),
+        title: Text("Checkout"),
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                "Review your order",
-                style: Theme.of(context).textTheme.titleMedium,
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(20.0),
+              margin: EdgeInsets.only(bottom: 16.0, left: 16, right: 16),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                border: Border.all(color: greyColor40),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Home",
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                        ),
+                        SizedBox(
+                          height: 4.0,
+                        ),
+                        Text(
+                          "Noida, New Delhi",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      context.pop();
+                    },
+                    child: Text("Change"),
+                  ),
+                ],
               ),
             ),
-            ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return CartCard();
-              },
-              separatorBuilder: (context, index) {
-                return Divider(
-                  color: greyColor20,
-                );
-              },
-              itemCount: 2,
-            ),
-            SizedBox(
-              height: 20.0,
+            Container(
+              margin: EdgeInsets.all(16.0),
+              // padding: const EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: greyColor40,
+                ),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                  Text(
+                    "Your  Products",
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                  ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 2,
+                    separatorBuilder: (context, index) {
+                      return Divider(
+                        color: greyColor40,
+                      );
+                    },
+                    itemBuilder: (context, index) {
+                      return CheckoutProductListTile();
+                    },
+                  )
+                ],
+              ),
             ),
             Container(
               margin: EdgeInsets.all(20.0),
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               decoration: BoxDecoration(
-                border: Border.all(color: greyColor20),
+                border: Border.all(color: greyColor40),
                 borderRadius: BorderRadius.circular(12.0),
               ),
               child: Column(
@@ -185,14 +241,47 @@ class CartScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Payment Method ",
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            RadioListTile(
+              title: Text("Cash on Delivery"),
+              value: "cod",
+              groupValue: ["cod", 'debit card', 'upi'],
+              onChanged: (value) {},
+            ),
+            RadioListTile(
+              title: Text("Debit Card"),
+              value: "debit card",
+              groupValue: ["cod", 'debit card', 'upi'],
+              onChanged: (value) {},
+            ),
+            RadioListTile(
+              title: Text("UPI"),
+              value: "upi",
+              groupValue: ["cod", 'debit card', 'upi'],
+              onChanged: (value) {},
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: ElevatedButton(
-                onPressed: () {
-                  context.go(FullRouteName.selectAddress);
-                },
-                child: const Text("Checkout"),
-              ),
+                  onPressed: () {},
+                  child: Text(
+                    "Complete your Order",
+                  )),
+            ),
+            SizedBox(
+              height: 30,
             ),
           ],
         ),

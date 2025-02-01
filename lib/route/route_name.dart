@@ -59,6 +59,11 @@ class RouteName {
   static const String paymentMethodScreenRoute = "payment_method";
   static const String addNewCardScreenRoute = "add_new_card";
   static const String thanksForOrderScreenRoute = "thanks_order";
+  static const String wishlistScreenRoute = "wishlist";
+  static const String faqScreenRoute = "faq";
+  static const String selectedAddressScreenRoute = "select_address";
+  static const String checkSummaryScreenRoute = "checkout";
+  static const String editProfileScreenRoute = "edit_profile";
 }
 
 class FullRouteName {
@@ -70,4 +75,15 @@ class FullRouteName {
   static final productDetails = "/${RouteName.productDetailsScreenRoute}";
   static final discover = "/${RouteName.discoverScreenRoute}";
   static final notifications = "/${RouteName.notificationsScreenRoute}";
+  static final orders = "/${RouteName.ordersScreenRoute}";
+  static final wishlist = "/${RouteName.wishlistScreenRoute}";
+  static final getHelp = "/${RouteName.getHelpScreenRoute}";
+  static final faq = "/${RouteName.faqScreenRoute}";
+  static final address = "/${RouteName.addressesScreenRoute}";
+  static final editProfile = "/${RouteName.editProfileScreenRoute}";
+  static final selectAddress =
+      "/${RouteName.cartScreenRoute}/${RouteName.selectedAddressScreenRoute}";
+
+  static final checkoutSummary =
+      "/${RouteName.cartScreenRoute}/${RouteName.selectedAddressScreenRoute}/${RouteName.checkSummaryScreenRoute}";
 }

@@ -1,15 +1,22 @@
+import 'package:ecom/route/screen_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ecom/components/list_tile/divider_list_tile.dart';
 import 'package:ecom/components/network_image_with_loader.dart';
 import 'package:ecom/constants.dart';
+import 'package:go_router/go_router.dart';
 
-import 'components/profile_card.dart';
-import 'components/profile_menu_item_list_tile.dart';
+import '../components/profile_card.dart';
+import '../components/profile_menu_item_list_tile.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +30,7 @@ class ProfileScreen extends StatelessWidget {
             // isPro: true, if the user is pro
             press: () {
               // Navigator.pushNamed(context, userInfoScreenRoute);
+              context.go(FullRouteName.editProfile);
             },
           ),
           Padding(
@@ -50,40 +58,42 @@ class ProfileScreen extends StatelessWidget {
             text: "Orders",
             svgSrc: "assets/icons/Order.svg",
             press: () {
-              // Navigator.pushNamed(context, ordersScreenRoute);
+              context.go(FullRouteName.orders);
             },
           ),
-          ProfileMenuListTile(
-            text: "Returns",
-            svgSrc: "assets/icons/Return.svg",
-            press: () {},
-          ),
+          // ProfileMenuListTile(
+          //   text: "Returns",
+          //   svgSrc: "assets/icons/Return.svg",
+          //   press: () {},
+          // ),
           ProfileMenuListTile(
             text: "Wishlist",
             svgSrc: "assets/icons/Wishlist.svg",
-            press: () {},
+            press: () {
+              context.go(FullRouteName.wishlist);
+            },
           ),
           ProfileMenuListTile(
             text: "Addresses",
             svgSrc: "assets/icons/Address.svg",
             press: () {
-              // Navigator.pushNamed(context, addressesScreenRoute);
+              context.go(FullRouteName.address);
             },
           ),
-          ProfileMenuListTile(
-            text: "Payment",
-            svgSrc: "assets/icons/card.svg",
-            press: () {
-              // Navigator.pushNamed(context, emptyPaymentScreenRoute);
-            },
-          ),
-          ProfileMenuListTile(
-            text: "Wallet",
-            svgSrc: "assets/icons/Wallet.svg",
-            press: () {
-              // Navigator.pushNamed(context, walletScreenRoute);
-            },
-          ),
+          // ProfileMenuListTile(
+          //   text: "Payment",
+          //   svgSrc: "assets/icons/card.svg",
+          //   press: () {
+          //     // Navigator.pushNamed(context, emptyPaymentScreenRoute);
+          //   },
+          // ),
+          // ProfileMenuListTile(
+          //   text: "Wallet",
+          //   svgSrc: "assets/icons/Wallet.svg",
+          //   press: () {
+          //     // Navigator.pushNamed(context, walletScreenRoute);
+          //   },
+          // ),
           const SizedBox(height: defaultPadding),
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -98,37 +108,37 @@ class ProfileScreen extends StatelessWidget {
             title: "Notification",
             trilingText: "Off",
             press: () {
-              // Navigator.pushNamed(context, enableNotificationScreenRoute);
+              context.go(FullRouteName.notifications);
             },
           ),
-          ProfileMenuListTile(
-            text: "Preferences",
-            svgSrc: "assets/icons/Preferences.svg",
-            press: () {
-              // Navigator.pushNamed(context, preferencesScreenRoute);
-            },
-          ),
-          const SizedBox(height: defaultPadding),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding, vertical: defaultPadding / 2),
-            child: Text(
-              "Settings",
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-          ),
-          ProfileMenuListTile(
-            text: "Language",
-            svgSrc: "assets/icons/Language.svg",
-            press: () {
-              // Navigator.pushNamed(context, selectLanguageScreenRoute);
-            },
-          ),
-          ProfileMenuListTile(
-            text: "Location",
-            svgSrc: "assets/icons/Location.svg",
-            press: () {},
-          ),
+          // ProfileMenuListTile(
+          //   text: "Preferences",
+          //   svgSrc: "assets/icons/Preferences.svg",
+          //   press: () {
+          //     // Navigator.pushNamed(context, preferencesScreenRoute);
+          //   },
+          // ),
+          // const SizedBox(height: defaultPadding),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(
+          //       horizontal: defaultPadding, vertical: defaultPadding / 2),
+          //   child: Text(
+          //     "Settings",
+          //     style: Theme.of(context).textTheme.titleSmall,
+          //   ),
+          // ),
+          // ProfileMenuListTile(
+          //   text: "Language",
+          //   svgSrc: "assets/icons/Language.svg",
+          //   press: () {
+          //     // Navigator.pushNamed(context, selectLanguageScreenRoute);
+          //   },
+          // ),
+          // ProfileMenuListTile(
+          //   text: "Location",
+          //   svgSrc: "assets/icons/Location.svg",
+          //   press: () {},
+          // ),
           const SizedBox(height: defaultPadding),
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -142,13 +152,15 @@ class ProfileScreen extends StatelessWidget {
             text: "Get Help",
             svgSrc: "assets/icons/Help.svg",
             press: () {
-              // Navigator.pushNamed(context, getHelpScreenRoute);
+              context.go(FullRouteName.getHelp);
             },
           ),
           ProfileMenuListTile(
             text: "FAQ",
             svgSrc: "assets/icons/FAQ.svg",
-            press: () {},
+            press: () {
+              context.go(FullRouteName.faq);
+            },
             isShowDivider: false,
           ),
           const SizedBox(height: defaultPadding),

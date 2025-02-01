@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        title: 'Shop Template by The Flutter Way',
+        title: 'Ecommerce',
         theme: AppTheme.lightTheme(context),
         // Dark theme is inclided in the Full template
         themeMode: ThemeMode.light,
