@@ -64,6 +64,14 @@ class BottomNav extends StatelessWidget {
               label: "Order",
             ),
             BottomNavigationBarItem(
+              icon: NavIcon(src: "assets/icons/Category.svg"),
+              activeIcon: NavIcon(
+                src: "assets/icons/Category.svg",
+                color: primaryColor,
+              ),
+              label: "Categories",
+            ),
+            BottomNavigationBarItem(
               icon: NavIcon(src: "assets/icons/Bag.svg"),
               activeIcon: NavIcon(
                 src: "assets/icons/Bag.svg",

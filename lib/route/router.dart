@@ -1,7 +1,6 @@
 import 'package:ecom/features/address/view/address_screen.dart';
 import 'package:ecom/features/checkout/views/checkout_screen.dart';
 import 'package:ecom/features/checkout/views/select_address_screen.dart';
-import 'package:ecom/features/notifications%20/views/notification_screen.dart';
 import 'package:ecom/features/orders/views/order_screen.dart';
 import 'package:ecom/features/profile/views/edit_profile_screen.dart';
 import 'package:ecom/features/support/views/faq_screen.dart';
@@ -11,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:ecom/bottom_navigation/view/bottom_nav.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/notifications/views/notification_screen.dart';
 import 'screen_export.dart';
 
 class Routes {

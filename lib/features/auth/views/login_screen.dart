@@ -56,9 +56,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        context.go(FullRouteName.home);
-                      }
+                      // if (_formKey.currentState!.validate()) {
+                      //   context.go(FullRouteName.home);
+                      // }
+
+                      context.go(FullRouteName.home);
                     },
                     child: const Text("Log in"),
                   ),

@@ -1,3 +1,4 @@
+import 'package:ecom/features/categories/views/categories_screen.dart';
 import 'package:ecom/features/orders/views/order_screen.dart';
 import 'package:ecom/features/wislist/views/wislist_screen.dart';
 import 'package:ecom/route/screen_export.dart';
@@ -9,6 +10,7 @@ class BottomNavProvider extends ChangeNotifier {
     HomeScreen(),
     OrderScreen(),
     // EmptyCartScreen(), // if Cart is empty
+    CategoriesScreen(),
     CartScreen(),
     ProfileScreen(),
   ];
