@@ -3,6 +3,8 @@ class RouteName {
   // static const String notificationPermissionScreenRoute =
   //     "notification_permission";
   // static const String preferredLanuageScreenRoute = "preferred_language";
+  static const String trendingScreenRoute = "trending";
+
   static const String logInScreenRoute = "login";
   static const String signUpScreenRoute = "signup";
   static const String passwordRecoveryScreenRoute = "password_recovery";

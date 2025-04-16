@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../widgets/app_highlights.dart';
 import '../widgets/best_sellers.dart';
 import '../widgets/flash_sale.dart';
 import '../widgets/offer_carousel_and_categories.dart';
@@ -54,6 +55,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           OffersCarouselAndCategories(),
           BannerList(),
+          AppHighlights(),
           PopularProducts(),
           // FlashSale(),
           CustomerReviewList(),

@@ -1,3 +1,4 @@
+import 'package:ecom/features/trending/view/trending_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ecom/components/product/product_card.dart';
 import 'package:ecom/models/product_model.dart';
@@ -18,9 +19,26 @@ class PopularProducts extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-          child: Text(
-            "Trending products",
-            style: Theme.of(context).textTheme.titleSmall,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Trending products",
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TrendingScreen()));
+                },
+                child: Text(
+                  "View All",
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+              )
+            ],
           ),
         ),
         // While loading use 👇

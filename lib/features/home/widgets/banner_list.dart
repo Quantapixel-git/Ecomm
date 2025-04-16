@@ -6,7 +6,7 @@ class BannerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 280,
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16.0),
       child: CarouselView.weighted(
         shape: RoundedRectangleBorder(
