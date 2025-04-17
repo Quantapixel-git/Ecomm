@@ -1,3 +1,7 @@
+import 'package:ecom/features/Cancellation/view/cancellation_policy_page.dart';
+import 'package:ecom/features/get_in_touch/views/get_in_touch_screen.dart';
+import 'package:ecom/features/return_policy/view/return_policy.dart';
+import 'package:ecom/features/view/about_us_page.dart';
 import 'package:ecom/route/screen_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -149,10 +153,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           ProfileMenuListTile(
+            text: "Get In Touch",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GetInTouchPage()));
+            },
+          ),
+          ProfileMenuListTile(
             text: "Get Help",
             svgSrc: "assets/icons/Help.svg",
             press: () {
               context.go(FullRouteName.getHelp);
+            },
+          ),
+          ProfileMenuListTile(
+            text: "Return Policy",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ReturnPolicyScreen()));
+            },
+          ),
+          ProfileMenuListTile(
+            text: "Cancellation Policy",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CancellationPolicyPage()));
+            },
+          ),
+          ProfileMenuListTile(
+            text: "About US",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutUsPage()));
             },
           ),
           ProfileMenuListTile(

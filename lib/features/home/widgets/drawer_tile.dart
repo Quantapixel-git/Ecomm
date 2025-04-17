@@ -15,17 +15,19 @@ class DrawerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
+        Navigator.pop(context);
         Navigator.push(context, MaterialPageRoute(builder: (context) => route));
       },
       leading: Icon(
         icon,
-        size: 24,
+        size: 22,
       ),
       title: Text(
-        title.toUpperCase(),
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+        title,
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
       ),
     );
   }
 }
+
 //D5DE4491-299C42A0-8A6D29B3-0EA76406

@@ -22,7 +22,7 @@ class AppHighlights extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-            height: 200,
+            height: 180,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
@@ -45,7 +45,7 @@ class AppHighlights extends StatelessWidget {
                       'https://quantapixel.in/electon1/img/service/home-ser3.png',
                 ),
                 HighLightTile(
-                  title: 'Return method',
+                  title: 'Best Gift Voucher',
                   subTitle: 'the Generated is there was!',
                   imageSrc:
                       'https://quantapixel.in/electon1/img/service/home-ser4.png',
@@ -76,10 +76,10 @@ class HighLightTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Container(
-        width: 150,
+        width: 130,
         padding: EdgeInsets.symmetric(horizontal: 5),
         decoration: BoxDecoration(
-          color: Colors.grey.shade100,
+          color: Colors.grey.shade50,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: Colors.grey.shade200, width: 2),
         ),
@@ -89,21 +89,21 @@ class HighLightTile extends StatelessWidget {
           children: [
             Image.network(
               imageSrc,
-              height: 40,
+              height: 35,
             ),
             SizedBox(height: 5),
             Text(
               title,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   color: Colors.black87,
                   fontWeight: FontWeight.w600),
             ),
             SizedBox(height: 5),
             Text(
               subTitle,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
           ],

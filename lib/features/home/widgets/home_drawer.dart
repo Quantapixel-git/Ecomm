@@ -1,4 +1,5 @@
 import 'package:ecom/bottom_navigation/widgets/nav_icon.dart';
+import 'package:ecom/features/blogs/views/blogs_screen.dart';
 import 'package:ecom/features/checkout/views/cart_screen.dart';
 import 'package:ecom/features/home/widgets/drawer_tile.dart';
 import 'package:ecom/features/orders/views/order_screen.dart';
@@ -38,7 +39,7 @@ class HomeDrawer extends StatelessWidget {
           DrawerTile(
             title: 'Blogs',
             icon: Icons.message_outlined,
-            route: CartScreen(),
+            route: BlogScreen(),
           ),
           DrawerTile(
             title: 'Contact Us',

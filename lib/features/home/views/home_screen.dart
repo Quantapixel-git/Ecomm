@@ -2,6 +2,7 @@ import 'package:ecom/features/home/widgets/banner_list.dart';
 import 'package:ecom/features/home/widgets/customer_review_list.dart';
 import 'package:ecom/features/home/widgets/follow_on_instagram_widget.dart';
 import 'package:ecom/features/home/widgets/home_drawer.dart';
+import 'package:ecom/features/home/widgets/popular_categories.dart';
 import 'package:ecom/route/screen_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -54,6 +55,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           OffersCarouselAndCategories(),
+          PopularCategories(),
           BannerList(),
           AppHighlights(),
           PopularProducts(),
