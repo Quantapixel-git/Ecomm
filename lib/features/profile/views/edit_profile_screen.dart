@@ -15,10 +15,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _nameController.text = "Vishal";
-    _emailController.text = "vishal@gmail.com";
+    _nameController.text = "Pratham";
+    _emailController.text = "PrathamBhatnagar313@gmail.com";
   }
 
   @override

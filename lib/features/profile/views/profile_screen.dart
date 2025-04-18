@@ -1,7 +1,8 @@
 import 'package:ecom/features/Cancellation/view/cancellation_policy_page.dart';
 import 'package:ecom/features/get_in_touch/views/get_in_touch_screen.dart';
+import 'package:ecom/features/privacy_policy/view/privacy_policy_screen.dart';
 import 'package:ecom/features/return_policy/view/return_policy.dart';
-import 'package:ecom/features/view/about_us_page.dart';
+import 'package:ecom/features/ticket/views/raise_ticket_screen.dart';
 import 'package:ecom/route/screen_export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,7 +10,7 @@ import 'package:ecom/components/list_tile/divider_list_tile.dart';
 import 'package:ecom/components/network_image_with_loader.dart';
 import 'package:ecom/constants.dart';
 import 'package:go_router/go_router.dart';
-
+import '../../about_us/view/about_us_page.dart';
 import '../components/profile_card.dart';
 import '../components/profile_menu_item_list_tile.dart';
 
@@ -161,6 +162,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           ProfileMenuListTile(
+            text: "Raise A Ticket",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RaiseTicketScreen()));
+            },
+          ),
+          ProfileMenuListTile(
             text: "Get Help",
             svgSrc: "assets/icons/Help.svg",
             press: () {
@@ -175,6 +184,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => ReturnPolicyScreen()));
+            },
+          ),
+          ProfileMenuListTile(
+            text: "Privacy Policy",
+            svgSrc: "assets/icons/Help.svg",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PrivacyPolicyPage()));
             },
           ),
           ProfileMenuListTile(
